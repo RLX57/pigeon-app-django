@@ -6,6 +6,7 @@ __pycache__/
 *.so
 *.pyc
 
+
 # Distribution / packaging
 .Python
 env/
@@ -52,4 +53,8 @@ coverage.xml
 docs/_build/
 
 # PyBuilder
+<<<<<<< HEAD
 target/
+=======
+target/
+>>>>>>> acfb767ab674376faff1c0f7f66496f01729a1b4
