@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'feed/style.css' %}" />
+
+<h1>PigeonApp</h1>
+
+{% load static %} <img src="{% static "images/pigeon.png" %}" id="pigeon" alt="Hi!" />
+
+<form action="{% url "feed.views.index" %}" method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+<input type="submit" value="Tweet !" />
+</form>
+
+<div class="tweets">
+{% if latest_tweet_list %}
+    <ul>
+    {% for tweet in latest_tweet_list %}
+        <li class="liste tweet">{{ tweet.tweet_text }} - {{tweet.tweet_user}} - {{tweet.pub_date}}</li>
+    {% endfor %}
+    {{message}}
+    </ul>
+{% else %}
+    <p>No tweets are available.</p>
+{% endif %}
+</div>
